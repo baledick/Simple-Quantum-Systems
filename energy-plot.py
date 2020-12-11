@@ -10,13 +10,13 @@ def root(x, y):
 
 step=np.arange(0.01, 8.0001, 0.0001)
 
-#pi_spots=np.array(['$\pi/2$', '$\pi/2$', '$\pi/2$','$\pi/2$'])
-#plt.style.use('greyscale')
-#plt.xticks(step, pi_spots)
+
 plt.plot(step, root(step, 8))
 plt.plot(step,tan(step))
-yax = plt.gca()
-yax.axes.yaxis.set_ticks([])
-yax.set_ylim([0,9])
-plt.savefig('energy-plot.png')
+ax = plt.gca()
+ax.axes.yaxis.set_ticks([])
+ax.set_ylim([0,9])
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+plt.savefig('energy-plot.png', transparent=True)
 plt.show()
